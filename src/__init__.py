@@ -52,10 +52,15 @@ class System(object):
             part = int(request.query_params.get("part", 1))
         except TypeError:
             raise HTTPException(status_code=404, detail="File not found")
+        next_part = part + 1 if part < len(self.video_list) else 1
+        print(next_part)
         try:
             videos = [{
                 "part": part,
+                "next_part": next_part,
                 "title": self.name + ": " + self.video_list[part-1].split(".")[0],
+                "next_title": self.name + ": " + self.video_list[next_part-1].split(".")[0],
+
             }]
         except IndexError:
             print(0)
