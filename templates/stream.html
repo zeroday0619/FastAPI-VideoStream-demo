@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% for video in videos %}
+        <title>{{ video.title }}</title>
+        {% endfor %}
+    </head>
+    <body>
+        {% for video in videos %}
+        <h1>{{ video.title }}</h1>
+        {% endfor %}
+
+
+        <video width="1200" controls>
+            {% for video in videos %}
+            <source src="http://localhost:8000/video?part={{ video.part }}" type="video/mp4" />
+            {% endfor %}
+        </video>
+    </body>
+</html>
