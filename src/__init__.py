@@ -5,16 +5,12 @@ from fastapi.templating import Jinja2Templates
 
 class System(object):
     CHUNK_SIZE = 1024*1024
-    name = "걸즈 밴드 크라이"
+    name = "우분투 한국 커뮤니티 차기 대표 후보자 연설"
     video_list = [
-        '제1화 도쿄 으랏차.mp4',
-        '제2화 야행성 생물 세 마리.mp4', 
-        '제3화 엉뚱한 문답.mp4',  
-        '제4화 감사 (놀람).mp4',  
-        '제5화 노랫소리여 일어나라.mp4',  
-        '제6화 아웃사이더 찬가.mp4',  
-        '제7화 이름을 붙여 주겠어.mp4',  
-        '제8화 만약 네가 운다면.mp4'
+        '후보 1 - 추영욱',
+        '후보 2 - 신창섭',
+        '후보 3 - 록키 리눅스',
+        '후보 4 - 윈도우 11',
     ]
     def __init__(self, app: FastAPI):
         self.app = app
